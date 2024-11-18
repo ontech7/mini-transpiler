@@ -5,7 +5,7 @@ A transpiler for [@9elt/miniframe](https://github.com/9elt/miniframe)
 ## usage
 
 ```
-npm i @9elt/mini-transpiler
+npm i --save-dev @9elt/mini-transpiler
 ```
 
 then add in your `tsconfig.json`:
