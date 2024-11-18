@@ -1,29 +1,43 @@
 import type { MiniElement } from "@9elt/miniframe";
-import { JSXInternal } from "./jsx";
 
 type Tags =
-  | keyof HTMLElementTagNameMap
-  | keyof SVGElementTagNameMap
-  | keyof MathMLElementTagNameMap;
-type Children = (MiniElement | string)[];
+    | keyof HTMLElementTagNameMap
+    | keyof SVGElementTagNameMap
+    | keyof MathMLElementTagNameMap;
+
+type Child =
+    | MiniElement
+    | HTMLElement
+    | SVGElement
+    | MathMLElement
+    | string
+    | null
+    | false;
 
 export function jsx(
-  tagName: Tags | Function,
-  props: Partial<MiniElement> & { children?: Children }
+    tagName: Tags | Function,
+    props: Partial<MiniElement> & { children?: Child[] }
 ): MiniElement;
 
 export function jsxDEV(
-  tagName: Tags | Function,
-  props: Partial<MiniElement> & { children?: Children }
+    tagName: Tags | Function,
+    props: Partial<MiniElement> & { children?: Child[] }
 ): MiniElement;
 
 export function jsxs(
-  tagName: Tags | Function,
-  props: Partial<MiniElement> & { children?: Children }
+    tagName: Tags | Function,
+    props: Partial<MiniElement> & { children?: Child[] }
 ): MiniElement;
 
 export function Fragment(
-  props: Partial<MiniElement> & { children?: Children }
+    props: Partial<MiniElement> & { children?: Child[] }
 ): MiniElement;
 
-export { JSXInternal as JSX };
+export declare namespace JSX {
+    interface IntrinsicElements {
+        [element: string]: any;
+    }
+    interface ElementChildrenAttribute {
+        children: any;
+    }
+}
