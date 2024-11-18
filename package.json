@@ -1,18 +1,22 @@
 {
-    "name": "@9elt/mini-transpiler",
-    "version": "0.0.1",
-    "main": "./jsx-runtime.js",
-    "types": "./jsx-runtime.d.ts",
-    "author": "Andrea Losavio",
-    "license": "MIT",
-    "keywords": [
-        "miniframe",
-        "transpiler"
-    ],
-    "readme": "./README.md",
-    "homepage": "https://github.com/ontech7/mini-transpiler#readme",
-    "repository": "github:ontech7/mini-transpiler",
-    "devDependencies": {
-        "@9elt/miniframe": "^0.8.4"
-    }
+	"name": "@9elt/mini-transpiler",
+	"version": "0.0.2",
+	"main": "./jsx-runtime.js",
+	"types": "./jsx-runtime.d.ts",
+	"author": "Andrea Losavio",
+	"license": "MIT",
+	"keywords": [
+		"miniframe",
+		"transpiler"
+	],
+	"scripts": {
+		"build": "cp jsx-runtime.d.ts jsx-dev-runtime.d.ts && cp jsx-runtime.js jsx-dev-runtime.js",
+		"pub": "npm run build && npm publish"
+	},
+	"readme": "./README.md",
+	"homepage": "https://github.com/ontech7/mini-transpiler#readme",
+	"repository": "github:ontech7/mini-transpiler",
+	"devDependencies": {
+		"@9elt/miniframe": "^0.8.4"
+	}
 }

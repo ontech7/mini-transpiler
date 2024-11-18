@@ -12,7 +12,10 @@ then add in your `tsconfig.json`:
 
 ```json
 {
-    "extends": "@9elt/mini-transpiler/jsx.json",
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "jsxImportSource": "@9elt/mini-transpiler"
+  }
 }
 ```
 
